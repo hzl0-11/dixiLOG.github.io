@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('rocos_img/zmbz.png') no-repeat center center fixed; /* 替换为你的本地图像路径 */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: backgroundAnimation 10s infinite alternate; /* 背景动画 */
+        }
+
+        /* 背景动画，渐隐和缩放效果 */
+        @keyframes backgroundAnimation {
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+
+        #login-form {
+            background: rgba(204, 224, 217, 0.98); /* 调整背景颜色的透明度 */
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.22); /* 增强阴影效果 */
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            animation: formAnimation 2s ease-in-out; /* 登录表单的进入动画 */
+            transition: transform 0.1s ease-out; /* 添加平滑过渡 */
+            transform-style: preserve-3d; /* 保留 3D 变换效果 */
+        }
+
+        /* 表单动画，淡入效果 */
+        @keyframes formAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #login-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            transform: translateZ(20px); /* 增加 Z 轴位移以显示厚度 */
+        }
+
+        #login-form input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease; /* 输入框焦点动态效果 */
+            transform: translateZ(10px); /* 增加 Z 轴位移以显示厚度 */
+        }
+        #login-form input:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        #login-form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #414b56;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* 按钮的动态效果 */
+            transform: translateZ(10px); /* 增加 Z 轴位移以显示厚度 */
+        }
+        #login-form button:hover {
+            background-color: #e7d362;
+            transform: translateZ(10px) translateY(-2px);
+        }
+        #login-form p {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            transform: translateZ(10px); /* 增加 Z 轴位移以显示厚度 */
+        }
+        #login-form a {
+            color: #007bff;
+            text-decoration: none;
+            transform: translateZ(10px); /* 增加 Z 轴位移以显示厚度 */
+        }
+        #login-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* 添加一些漂浮的装饰元素 */
+        .floating-element {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: floatingAnimation 6s infinite ease-in-out;
+        }
+
+        @keyframes floatingAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* 定义不同大小和位置的漂浮元素 */
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            bottom: 10%;
+            left: 10%;
+            animation-duration: 4s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            top: 20%;
+            right: 20%;
+            animation-duration: 7s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 50%;
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- 漂浮的装饰元素 -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <form id="login-form" onsubmit="return login();">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAa66EUv9NGTgQ2MmRrSUzvmWQIh7DAH0w",
+            authDomain: "dixilog-cc0be.firebaseapp.com",
+            projectId: "dixilog-cc0be",
+            storageBucket: "dixilog-cc0be.appspot.com",
+            messagingSenderId: "317567263984",
+            appId: "1:317567263984:web:58fa672ce564bf554d0e35",
+            measurementId: "G-XKHLTS0VXB"
+        };
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
+        function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    window.location.href = '../ROCOS'; // 登录成功后跳转到受保护内容的入口页面
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+
+                    if (errorMessage.includes("INVALID_LOGIN_CREDENTIALS")) {
+                        alert("邮箱或密码填写错误，请重试");
+                    } else if (errorMessage.includes("EMAIL_NOT_FOUND")) {
+                        alert("该邮箱不存在，请检查输入或注册新账户。");
+                    } else if (errorMessage.includes("USER_DISABLED")) {
+                        alert("此用户账户已被禁用。");
+                    } else {
+                        alert(`登录失败: ${errorMessage}`);
+                    }
+                    window.location.href = '../'; // 可根据需要删除或修改这行
+                });
+
+            return false; // 阻止表单提交
+        }
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                window.location.href = '../ROCOS'; // 已登录用户直接跳转到受保护内容的入口页面
+            }
+        });
+
+        // 添加鼠标移动事件监听器
+        document.addEventListener("mousemove", function (e) {
+            const loginForm = document.getElementById("login-form");
+            const rect = loginForm.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const rotateX = -(y / rect.height) * 15; // 根据鼠标位置计算旋转角度
+            const rotateY = (x / rect.width) * 15;
+
+            loginForm.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- 保护页面 -->
+<!-- 引入 Firebase SDK -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<script>
+    // 确保 Firebase 只初始化一次
+    if (!firebase.apps.length) {
+        const firebaseConfig = {
+            apiKey: "AIzaSyAa66EUv9NGTgQ2MmRrSUzvmWQIh7DAH0w",
+            authDomain: "dixilog-cc0be.firebaseapp.com",
+            projectId: "dixilog-cc0be",
+            storageBucket: "dixilog-cc0be.appspot.com",
+            messagingSenderId: "317567263984",
+            appId: "1:317567263984:web:58fa672ce564bf554d0e35",
+            measurementId: "G-XKHLTS0VXB"
+        };
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    // 监听用户登录状态
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // 输出调试信息
+            console.log('User already logged in, redirecting...');
+            // alert('您已登录，为您自动跳转~');
+        } else {
+            // 输出调试信息
+            console.log('User not logged in, redirecting to login.html');
+            window.location.href = 'login.html'; // 未登录用户跳转到登录页
+        }
+    });
+</script> -->

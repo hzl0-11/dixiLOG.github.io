@@ -1,0 +1,2099 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/S%26S/S%26S04/">
+      
+      
+        <link rel="prev" href="../S%26S03/">
+      
+      
+        <link rel="next" href="../S%26S05/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
+    
+    
+      
+        <title>4. 抽样、调制与解调 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. 抽样、调制与解调
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Chronic%20Study/" class="md-tabs__link">
+          
+  
+    
+  
+  Chronic Study[TODO]
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            信号与系统笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. S&amp;S 基本概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. LTI 的时域分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. FS/FT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4. 抽样、调制与解调
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4. 抽样、调制与解调
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽样定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="抽样定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      时域抽样定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="时域抽样定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      时域抽样恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      频域抽样定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      内插公式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内插公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      零阶抽样保持
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      一阶保持 线性内插
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      模拟调制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟调制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#am" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦信号下的 AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sc-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      SC-AM（抑制载波）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pam-" class="md-nav__link">
+    <span class="md-ellipsis">
+      PAM--脉冲幅度调制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      解调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步解调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="同步解调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理上可实现的低通滤波器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦信号下的同步解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sc-am_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SC-AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      AM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      非同步解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      对 PAM 的解调
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用和时分复用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频分复用和时分复用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. LT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. ZT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Chronic%20Study/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chronic Study[TODO]
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽样定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="抽样定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      时域抽样定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="时域抽样定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      时域抽样恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      频域抽样定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      内插公式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内插公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      零阶抽样保持
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      一阶保持 线性内插
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      模拟调制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟调制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#am" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦信号下的 AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sc-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      SC-AM（抑制载波）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pam-" class="md-nav__link">
+    <span class="md-ellipsis">
+      PAM--脉冲幅度调制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      解调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步解调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="同步解调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理上可实现的低通滤波器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦信号下的同步解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sc-am_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SC-AM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      AM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      非同步解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      对 PAM 的解调
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用和时分复用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频分复用和时分复用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      频分复用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="4">4. 抽样、调制与解调<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p>&nbsp;</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2427 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 13 分钟</p>
+<hr />
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_1">抽样定理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">重新认识抽样函数</p>
+<div class="arithmatex">\[\mathrm{Sa}(t)=\frac{\mathrm{sin}t}{t}\]</div>
+</div>
+<h3 id="_2">时域抽样定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<details class="info" open="open">
+<summary>推导过程</summary>
+<dl>
+<dt>理想抽样信号 = 输入信号·周期序列冲激信号，即</dt>
+<dd><span class="arithmatex">\(x_s(t)=x(t)p(t)\)</span>  </dd>
+<dt>其中</dt>
+<dd><span class="arithmatex">\(p(t)=\sum_{n=-\infty}^{+\infty}\delta(t-nT_s)\)</span>  </dd>
+<dt>对于理想 P(jw) 有</dt>
+<dd><span class="arithmatex">\(P(\mathrm{j}\omega)\:=\:\frac{2\pi}{T_s}\sum_{k=-\infty}^{+\infty}\delta(\omega-n\omega_s)\)</span>  </dd>
+<dt>利用卷积的性质，则有</dt>
+<dd><span class="arithmatex">\(x_{s}(t)=x(t)\bullet\sum_{n=-\infty}^{+\infty}\delta(t-nT_{s})=\sum_{n=-\infty}^{+\infty}x(nT_{s})\delta(t-nT_{s})\)</span>  </dd>
+<dt>另外，在 FT 变换域中表现为卷积，即</dt>
+<dd><span class="arithmatex">\(X_s(\text{j}\omega)=\frac{1}{2\pi}X(\text{j}\omega)*P(\text{j}\omega)\)</span>  </dd>
+<dt>得</dt>
+<dd><span class="arithmatex">\(X_{s}(j\omega)=\frac{1}{T_{s}}\sum_{n=-\infty}^{\infty}X(j(\omega-n\omega_{s}))\)</span>  </dd>
+<dt>由于信号 x(t) 只占一定的频率范围，可写为</dt>
+<dd><span class="arithmatex">\(\begin{aligned}
+X_{\mathrm{s}}\left(\mathrm{j}\omega\right)&amp; =\frac{1}{2\pi}X(\mathrm{j}\omega)*P(\mathrm{j}\omega)=\frac{1}{T_{s}}X(\mathrm{j}\omega)*\sum_{n=-\infty}^{+\infty}\delta(\omega-n\omega_{s})  \\
+&amp;=\frac{1}{T_{s}}\sum_{n=-\infty}^{+\infty}X\left(\mathrm{j}(\omega-n\omega_{s})\right)\left[u\left(\omega-n\omega_{s}+\omega_{\mathrm{m}}\right)-u\left(\omega-n\omega_{s}-\omega_{\mathrm{m}}\right)\right]
+\end{aligned}\)</span>  </dd>
+</dl>
+<p>其中，最低抽样频率为<span class="arithmatex">\(f_s=\frac{\omega_s}{2\pi}=\frac{\omega_\mathrm{m}}{\pi}=2f_\mathrm{m}\)</span>，<span class="arithmatex">\(f_m\)</span>为信号最高频率</p>
+</details>
+<blockquote>
+<p><mark>最低抽样频率 <span class="arithmatex">\(f_s\)</span> 为奈奎斯特频率，<span class="arithmatex">\(T_s\)</span> 为奈奎斯特间隔</mark></p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/24e0d396-ba1d-4dd5-8b00-079759ea1582.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/24e0d396-ba1d-4dd5-8b00-079759ea1582.png" /></a></p>
+<p>注意：<br />
+1. 观察频域的变化<br />
+2. 拉伸可理解为频率下降，故奈奎斯特频率下降<br />
+3. 卷积意味着延展</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">实际上的抽样</p>
+<p>非理想抽样信号 = 输入信号 · 周期序列矩形信号  </p>
+<div class="arithmatex">\[X_s(j\omega)=\frac{E\tau}{T_s}\sum_{n=-\infty}^\infty Sa\Bigg(\frac{n\omega_s\tau}{2}\Bigg)X(j(\omega-n\omega_s))\]</div>
+<p>相较于理想情况多了个抽样函数，即 <code>Sa(t)</code></p>
+</div>
+<h4 id="_3">时域抽样恢复<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>即过一个低通滤波器后做IFT</p>
+</blockquote>
+<details class="info" open="open">
+<summary>推导过程</summary>
+<dl>
+<dt>低通滤波器与其变换为</dt>
+<dd><span class="arithmatex">\(H(\text{j}\omega)\:=\:\begin{cases}T_s\:,\quad|\:\omega\:|&lt;\omega_\mathrm{c}\\\\\:0\:,\quad|\:\omega\:|&gt;\omega_\mathrm{c}\end{cases}\)</span><br />
+<span class="arithmatex">\(h(t)=\text{IFT}\{H(\text{j}\omega)\}=\frac{\omega_\text{c}T_s}{\pi}\text{Sa}(\omega_\text{c}t)\)</span></dd>
+</dl>
+<p>变换过程查表即可  </p>
+<dl>
+<dt>滤出原信号主周期</dt>
+<dd><span class="arithmatex">\(X_{\mathrm{o}}(\mathrm{j}\omega)\:=\:H(\mathrm{j}\omega)X_{\mathrm{s}}(\mathrm{j}\omega)\:=\:X(\mathrm{j}\omega)\)</span>  </dd>
+</dl>
+<p>再由卷积定理，有</p>
+<div class="arithmatex">\[\begin{aligned}
+x(t)&amp; =h(t)*x_{s}(t)=\frac{\omega_{\mathrm{c}}T_{s}}{\pi}\mathrm{Sa}(\omega_{\mathrm{c}}t)*\sum_{n=-\infty}^{+\infty}x(nT_{s})\delta(t-nT_{s})  \\
+&amp;=\sum_{n=-\infty}^{+\infty}\frac{\omega_{\mathrm{c}}\:T_{s}}{\pi}x\left(nT_{s}\right)\mathrm{Sa}\left(\omega_{\mathrm{c}}(t-nT_{s})\right)
+\end{aligned}\]</div>
+<p><mark>此即内插公式，用于恢复信号</mark></p>
+<dl>
+<dt>当 <span class="arithmatex">\(\omega_\mathrm{s}=2\omega_\mathrm{m},\omega_\mathrm{c}=\omega_\mathrm{m}\)</span> 时</dt>
+<dd>
+<p><span class="arithmatex">\(x(t)=\sum_{n=-\infty}^{+\infty}x(nT_s)\text{Sa}(\omega_\text{c}(t-nT_s))=\sum_{n=-\infty}^{+\infty}x(nT_s)\text{Sa}(\omega_\text{c}t-n\pi)\)</span></p>
+</dd>
+</dl>
+</details>
+<hr />
+<h3 id="_4">频域抽样定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>类似的，希望从X（jw）中抽样，并能唯一的恢复</p>
+</blockquote>
+<p>根据对称性，可得频域下的内插公式</p>
+<div class="arithmatex">\[X(j\omega)=\sum_{n=-\infty}^\infty\widetilde{X}(jn\omega_s)Sa((\omega-n\omega_s)t_m)\]</div>
+<hr />
+<h3 id="_5">内插公式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">零阶抽样保持<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>阶跃 阶梯状</p>
+</blockquote>
+<div class="admonition note">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DKXXbbXm1oZSrDx6a8AcskiUn5b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DKXXbbXm1oZSrDx6a8AcskiUn5b.png" /></a></p>
+</div>
+<p>其中，抽样信号为</p>
+<div class="arithmatex">\[
+x_s(t)=\sum_{n=-\infty}^{+\infty}x(nT_s)\delta(t-nT_s)
+\]</div>
+<p>抽样信号频谱为</p>
+<div class="arithmatex">\[
+X_s(\mathrm{j}\omega)\:=\:\frac{\omega_s}{2\pi}\sum_{s=-\infty}^{+\infty}X(\mathrm{j}\omega-\mathrm{j}n\omega_s)
+\]</div>
+<p>过理想低通滤波器（矩形脉冲信号）</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;h_{0}(t)\:=\:u(t)-u(t-T_{s})\\&amp;H_{0}(\mathrm{j}\omega)\:=\:\frac{1}{\mathrm{j}\omega}(\:1-\mathrm{e}^{-\mathrm{j}\omega T_{s}}\:)\:=\:T_{s}\mathrm{Sa}\biggl(\frac{\omega T_{s}}{2}\biggr)\mathrm{e}^{-\mathrm{j}\frac{\omega T_{s}}{2}}\end{aligned}
+\]</div>
+<p>得到输出</p>
+<div class="arithmatex">\[
+x_0(t)=x_s(t)*h_0(t)=\sum_{-\infty}^{+\infty}x(nT_s)\left[u(t-nT_s)-u(t-(n+1)T_s)\right]
+\]</div>
+<p><mark>但精度较差</mark></p>
+<p>进一步，得到输出信号的频谱</p>
+<div class="arithmatex">\[
+X_0(\mathrm{j}\omega)=X_s(\mathrm{j}\omega)H_0(\mathrm{j}\omega)=\mathrm{Sa}\biggl(\frac{\omega T_s}{2}\biggr)\mathrm{e}^{-\mathrm{j}\frac{\omega T_s}{2}}\sum_{n=-\infty}^{+\infty}X(\mathrm{j}\omega-\mathrm{j}n\omega_s)
+\]</div>
+<p>优化框图，再经过一个具有频率响应 <code>H(jw)</code> 的 LTI 系统，要求该 LTI 系统的输出 <code>y (t)</code> 与原始信号 <code>x(t)</code> 相同</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GFZ6bSAcvoRkPPxkP6Acrgkknmb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GFZ6bSAcvoRkPPxkP6Acrgkknmb.png" /></a></p>
+</div>
+<p>最后得到</p>
+<div class="arithmatex">\[
+H_{0r}(\mathrm{j}\omega)=\frac{\mathrm{e}^{\mathrm{j}\frac{\omega T_{s}}{2}}}{\mathrm{Sa}\left(\frac{\omega T_{s}}{2}\right)}H_{\mathrm{LPF}}(\mathrm{j}\omega)
+\]</div>
+<hr />
+<h4 id="_7">一阶保持 线性内插<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>即通过三角波的叠加恢复信号</p>
+</blockquote>
+<div class="admonition note">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GrqZbaTkMoXUZfxjxDNca7lnnCb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GrqZbaTkMoXUZfxjxDNca7lnnCb.png" /></a></p>
+</div>
+<p>相关函数有</p>
+<div class="admonition success">
+<div class="arithmatex">\[\begin{aligned}&amp;h_{1}\left(t\right)=\left(1-\frac{\mid t\mid}{T_{s}}\right)[\:u(t+T_{s})-u(t-T_{s})\:]\\&amp;H_{1}\left(\mathrm{j}\omega\right)=\:T_{s}\:\mathrm{Sa}^{2}\left(\frac{\omega T_{s}}{2}\right)\end{aligned}\]</div>
+<div class="arithmatex">\[\begin{aligned}
+x_{1}(t)&amp; =x_s(t)*h_1(t)  \\
+&amp;=\sum_{n=-\infty}^{+\infty}x(nT_s)\left(1-\frac{\mid t-nT_s\mid}{T_s}\right)[u(t-(n-1)T_s)-u(t-(n+1)T_s)] \\
+&amp;X_1(\mathrm{j}\omega)=H_1(\mathrm{j}\omega)X_s(\mathrm{j}\omega)=\mathrm{Sa}^2\left(\frac{\omega T_s}{2}\right)\sum_{n=-\infty}^{+\infty}X\left(\mathrm{j}\omega-\mathrm{j}n\omega_s\right)
+\end{aligned}\]</div>
+</div>
+<h2 id="_8">模拟调制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">一些常识</p>
+<ul>
+<li>
+<dl>
+<dt>调制即搬移低频信号频谱到高频载波信号上，包括调频（FM） 调幅（AM）和调相</dt>
+<dd>=&gt; 需要传送的 <mark>调制基带信号</mark> g(t) ，去调整高频（受天线长度限制）的 <mark>载波信号</mark> c(t)，形成 <mark>窄带信号</mark> s(t)  </dd>
+</dl>
+</li>
+<li>AM： 25 - 1605k HZ  </li>
+<li>FM： 88M - 108M HZ  </li>
+<li>调幅分为 AM SC-AM（抑制载波调幅） PAM（脉冲调幅）</li>
+</ul>
+</div>
+<h3 id="am">正弦信号下的 AM<a class="headerlink" href="#am" title="Permanent link">&para;</a></h3>
+<p><strong>输出调幅信号 = 基带信号 · 载波信号</strong></p>
+<div class="arithmatex">\[
+s(t)=g(t)\bullet c(t)
+\]</div>
+<p><strong>载波信号 c(t)</strong></p>
+<div class="arithmatex">\[
+c(t)=\cos(\omega_ct+\theta_c)
+\]</div>
+<p><span class="arithmatex">\(\omega_c\)</span>称为 <mark>载波频率</mark></p>
+<p>初相下的频谱 C(jw)</p>
+<div class="arithmatex">\[
+C(j\omega)=\pi\Big[\delta(\omega+\omega_{c})+\delta(\omega-\omega_{c})\Big]
+\]</div>
+<p>得窄波信号 S(jw)</p>
+<div class="arithmatex">\[
+\begin{gathered}
+S(j\omega) =\frac1{2\pi}G(j\omega)*\pi\Big[\delta(\omega+\omega_c)+\delta(\omega-\omega_c)\Big] \\
+=\frac12\Big[G\Big(j(\omega+\omega_c)\Big)+G\Big(j(\omega-\omega_c)\Big)\Big] 
+\end{gathered}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<blockquote>
+<p>直接写出三角脉冲信号FT ，结合冲激信号卷积性质可得</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/8d3d8f7f-f16e-4824-be13-e33def1695d5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/8d3d8f7f-f16e-4824-be13-e33def1695d5.png" /></a>  </p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/7195f801-9a96-4141-aa11-9047117b9db7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/7195f801-9a96-4141-aa11-9047117b9db7.png" /></a> </p>
+</div>
+<hr />
+<h3 id="sc-am">SC-AM（抑制载波）<a class="headerlink" href="#sc-am" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>将不含直流分量的基带信号放在载波信号上</p>
+</blockquote>
+<p>得到的窄波信号相同</p>
+<div class="arithmatex">\[
+\begin{gathered}
+S(j\omega) =\frac1{2\pi}G(j\omega)*\pi\Big[\delta(\omega+\omega_c)+\delta(\omega-\omega_c)\Big] \\
+=\frac12\Big[G\Big(j(\omega+\omega_c)\Big)+G\Big(j(\omega-\omega_c)\Big)\Big] 
+\end{gathered}
+\]</div>
+<p>给个图理解一下<br />
+注意，阴影部分为上边带，另一块为下边带<br />
+除了迁移频带，还观察到峰值减半  </p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/cb01f1f1-7615-4f08-aebf-b5b815579c8a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/cb01f1f1-7615-4f08-aebf-b5b815579c8a.png" /></a>  </p>
+</div>
+<hr />
+<h3 id="am_1">AM<a class="headerlink" href="#am_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>与 SC-AM 不同的是，基带信号 g(t) 中 <ins>包含</ins> 直流信号，即有一个向上的抬升，使得包络线更清晰
+一样的，有</p>
+</blockquote>
+<div class="arithmatex">\[
+s(t)=g(t)\bullet c(t)
+\]</div>
+<p>但基带信号中的直流分量 <mark>必须使包络线 &gt;0</mark> ，即</p>
+<div class="arithmatex">\[
+g(t)=A_{0}+x\:(t)
+\]</div>
+<div class="arithmatex">\[
+A_0\geqslant\mid x(t)\mid_{\max}
+\]</div>
+<p>所以 s(t) 可改写为</p>
+<div class="arithmatex">\[
+s(t)=A_0\cos(\omega_\mathrm{c}t)+x(t)\cos(\omega_\mathrm{c}t)
+\]</div>
+<p>下图为满足（左）与不满足（右）的情况</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/854881eb-e09a-4f68-a050-6233a64010bf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/854881eb-e09a-4f68-a050-6233a64010bf.png" /></a>  </p>
+</div>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/77722013-f138-4f9d-a6d6-61271336c2fd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/77722013-f138-4f9d-a6d6-61271336c2fd.png" title="对于频谱图来说，较 SC-AM 多了直流分量 FT 后的脉冲" /></a> </p>
+</div>
+<hr />
+<h3 id="pam-">PAM--脉冲幅度调制<a class="headerlink" href="#pam-" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>即 将载波 c(t) 改为周期矩形脉冲信号
+由此前知识，我们知道了周期矩形脉冲信号的 FT</p>
+</blockquote>
+<div class="arithmatex">\[
+C(\text{j}\omega)\:=\:\frac{2\pi}{T_0}\sum_{n=-\infty}^{+\infty}E\tau\text{Sa}\Bigg(\frac{n\omega_0\tau}{2}\Bigg)\delta\left(\omega-n\omega_0\right)
+\]</div>
+<p>得到调制信号即为此前所求的 <strong>非理想抽样信号，即</strong></p>
+<div class="arithmatex">\[
+S_s(j\omega)=\frac{E\tau}{T_s}\sum_{n=-\infty}^\infty Sa\Bigg(\frac{n\omega_s\tau}{2}\Bigg)G(j(\omega-n\omega_s))
+\]</div>
+<p>与正弦信号相比，矩形信号可以搬移无数多次</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GYuqbjOlCobUnjxXsv7ce0dynyg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GYuqbjOlCobUnjxXsv7ce0dynyg.png" /></a></p>
+</div>
+<hr />
+<h2 id="_9">解调<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">同步解调<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NAlIbIUh5ojIArx8gUDciirSn4c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NAlIbIUh5ojIArx8gUDciirSn4c.png" /></a></p>
+<p>同步，即接收端 c(t) 与发射端同步,同频同向<br />
+<mark><code>H(jw)</code>是幅度为 <ins>2</ins> ，截止频率为<code>w(M)</code>低通滤波器</mark><br />
+且需要满足<span class="arithmatex">\(\omega_{\mathrm{c}}\geqslant\omega_{\mathrm{m}}\)</span> &amp;&amp; <span class="arithmatex">\(\omega_{\mathrm{m}}&lt;\omega_{\mathrm{M}}&lt;2\omega_{\mathrm{c}}-\omega_{\mathrm{m}}\)</span> <br />
+通过载波的频率迁移后，再用低通滤波取主周期</p>
+<hr />
+<h4 id="_11">物理上可实现的低通滤波器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>多说无益，上例题</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CBtCbha3Io5XYJxbhVncWKFqnbg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CBtCbha3Io5XYJxbhVncWKFqnbg.png" title="说实话，最后一步没明白，sin哪来的？答：拉式变换来的" /></a></p>
+<hr />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q4F9b4kkJorSUUxSYNBc4tx7nxe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q4F9b4kkJorSUUxSYNBc4tx7nxe.png" title="相位基本线性，可用" /></a></p>
+</div>
+<hr />
+<h4 id="_12">正弦信号下的同步解调<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FdOEbdG0PoBmPvxUQQ9czg46n1M.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FdOEbdG0PoBmPvxUQQ9czg46n1M.png" /></a></p>
+<blockquote>
+<p>若带宽有限，则可用信号 s(t)再次调制相同的正弦载波<br />
+然后再通过一个具有合适截止频率的 <ins>理想低通滤波器</ins> 就可以了</p>
+</blockquote>
+<div class="arithmatex">\[
+s_0(t)=\frac{1}{2}g(t)\cos(2\omega_\text{c}t)+\frac{1}{2}g(t)
+\]</div>
+<p>一样的，看图说话</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BPjtbXa7KoWZmQx7r08cWutmnPe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BPjtbXa7KoWZmQx7r08cWutmnPe.png" /></a></p>
+</div>
+<hr />
+<h4 id="sc-am_1">SC-AM<a class="headerlink" href="#sc-am_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>一毛一样</p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{aligned}s_{0}(t)&amp;=s(t)\bullet c(t)=[g(t)\bullet c(t)]\bullet c(t)=g(t)\bullet c^2(t)\\&amp;=g(t)\bullet\frac{1+\cos(2\omega_\mathrm{c}t)}2=\frac12g(t)+\frac12g(t)\bullet\cos(2\omega_\mathrm{c}t)\end{aligned}
+\]</div>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TpYfbkgnooDEbDxiyVlcvFRfnvh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TpYfbkgnooDEbDxiyVlcvFRfnvh.png" /></a></p>
+</div>
+<hr />
+<h4 id="am_2">AM<a class="headerlink" href="#am_2" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>需要多一个隔直电路来过滤直流分量</p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{aligned}
+s_{0}\left(t\right)&amp; =s(t)\bullet c(t)=[\:g(t)\bullet c(t)\:]\bullet c(t)=[\:A_{0}+x(t)\:]\bullet c^{2}(t)  \\
+&amp;=\:[\:A_0+x(t)\:]\cdot\frac{1+\cos(2\omega_\text{c}t)}{2} \\
+&amp;=\frac{1}{2}\left[A_{0}+x(t)\right]+\frac{1}{2}\left[A_{0}+x(t)\right]\bullet\cos(2\omega_{\mathrm{c}}t)
+\end{aligned}
+\]</div>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YD2PbtXKcoCtb3xxnPBcEcQonpb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YD2PbtXKcoCtb3xxnPBcEcQonpb.png" /></a></p>
+</div>
+<hr />
+<h3 id="_13">非同步解调<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>可以由二极管、电阻、电容来构成包络检波器，通过对包络的分析完成解调<br />
+成本低，但需要 AM 给一个<span class="arithmatex">\(A_0\)</span>直流来规避失真，对发射机功率有一定需求</p>
+</blockquote>
+<hr />
+<h3 id="pam">对 PAM 的解调<a class="headerlink" href="#pam" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>了解一下</p>
+</blockquote>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HxngbL7knoLgeFxjRJkcyjO1nhd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HxngbL7knoLgeFxjRJkcyjO1nhd.png" /></a></p>
+</div>
+<hr />
+<h2 id="_14">频分复用和时分复用<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>类比计网的信道多路复用</p>
+</blockquote>
+<h3 id="_15">频分复用<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>通过不同频率的载波信号搬移到不同的频段上</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZXYzbmiMkoj0etxBtzZcRdLwnYe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZXYzbmiMkoj0etxBtzZcRdLwnYe.png" /></a></p>
+</div>
+<p>具体来说</p>
+<div class="admonition example">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Od4cbKdxTof200xoD7NcbEoenqd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Od4cbKdxTof200xoD7NcbEoenqd.png" /></a></p>
+<p><mark>解调下分别选取即可</mark>  </p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/O5SFbI7PEohtS9xlwYZcoAcFnrf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/O5SFbI7PEohtS9xlwYZcoAcFnrf.png" title="对某一信号先给一个带通，后续步骤一致" /></a>  </p>
+</div>
+<p>频谱和解调信号如下</p>
+<div class="arithmatex">\[
+\mathrm{FT}\{s_\mathrm{a}(t)\bullet\cos(\omega_\mathrm{a}t)\}=\frac{1}{2}G_\mathrm{a}(\mathrm{j}\omega)+\frac{1}{4}[G_\mathrm{a}(\mathrm{j}\omega+2\mathrm{j}\omega_\mathrm{a})+G_\mathrm{a}(\mathrm{j}\omega-2\mathrm{j}\omega_\mathrm{a})\:]
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}s_{\mathrm{a}}(t)\bullet\cos(\omega_{\mathrm{a}}t)&amp;=\:[\:g_{\mathrm{a}}(t)\cos(\omega_{\mathrm{a}}t)\:]\bullet\cos(\omega_{\mathrm{a}}t)\:=\:g_{\mathrm{a}}(t)\:\bullet\:\cos^{2}(\omega_{\mathrm{a}}t)\\&amp;=\frac{1}{2}g_{\mathrm{a}}(t)+\frac{1}{2}g_{\mathrm{a}}(t)\bullet\cos(2\omega_{\mathrm{a}}t)\end{aligned}
+\]</div>
+<hr />
+<h3 id="_16">时分复用<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>分配指定时间段给不同信道
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/J47xbgqr1oq1YExhLrycmXMwnqf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/J47xbgqr1oq1YExhLrycmXMwnqf.png" /></a></p>
+</blockquote>
+<div class="admonition quote">
+<p class="admonition-title">比较</p>
+<p>FDM 是用频率来区分同一信道上同时传输的信号，各信号在频域上是分开的，而在时域上是混叠在一起的 <br />
+TDM 是在时间上区分同一信道上传输的信号，各信号在时域上是分开的，而在频域上是混叠在一起的</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../S%26S03/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 3. FS/FT">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                3. FS/FT
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../S%26S05/" class="md-footer__link md-footer__link--next" aria-label="下一页: 5. LT">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                5. LT
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/print-site.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

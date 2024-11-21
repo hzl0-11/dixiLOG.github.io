@@ -1,0 +1,222 @@
+/* 页面宽度 */
+.md-grid {
+  max-width: 1440px; 
+}
+
+/* 自定义字体 */
+body {
+    font-family: "LXGW WenKai", sans-serif;
+    /* Lite version */
+    /* font-family: "LXGW WenKai Lite", sans-serif; */
+    /* TC version */
+    /* font-family: "LXGW WenKai TC", sans-serif; */
+    /* Screen version */
+    /* font-family: "LXGW WenKai Screen", sans-serif; */
+  }
+/* 按钮字体 */
+button.md-top {
+    font-family: LXGW WenKai; /* 修改字体 */
+    font-size: 16px; /* 修改字体大小 */
+    font-weight: bold; /* 修改字体粗细 */
+    color: #374148; /* 修改字体颜色 */
+  }
+
+/* 鼠标样式 */
+#cursor {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    /* 这里改变跟随的底色 */
+    background: rgb(209, 181, 116);
+    border-radius: 10px;
+    opacity: 0.4;
+    z-index: 10086;
+    pointer-events: none;
+    transition: 0.15s ease-in-out;
+    transition-property: background, opacity, transform;
+  }
+  
+  #cursor.hidden {
+    opacity: 0;
+  } */
+  
+  #cursor.hover {
+    opacity: 0.001;
+    transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -o-transform: scale(2.5);
+  }
+  
+  #cursor.active {
+    opacity: 0.01;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+/* 烟花容器 */
+.fireworks {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+    animation: firework 1s ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* 重力动画 */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+/* 图片放大start */
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.zoom {
+  transition: transform ease-in-out 0.5s;
+  cursor: zoom-in;
+}
+
+.image-zoom-large {
+  transform: scale(1.5);
+  cursor: zoom-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 100;
+  position: relative;
+}
+/* 图片放大end*/
+
+
+
+
+
+/* 进度条样式 */
+/* 整体 */
+#progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: #ccd938;
+  transition: width 0.25s;
+}
+
+
+/* 友情链接样式 */
+
+.flink-list {
+  overflow: auto;
+  padding: 10px 10px 0;
+  text-align: center;
+}
+.flink-list a {
+  color: #4a4a4a;
+}
+[data-md-color-scheme="slate"] .flink-list a {
+  color: rgba(255,255,255,0.7);
+}
+/* 卡片样式 */
+.flink-list-item {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 15px 7px;
+  width: calc(100% / 2 - 15px);
+  height: 90px;
+  border-radius: 8px;
+  line-height: 17px;
+  
+  background-color: rgba(68,138,255,.1);   /* 卡片背景颜色 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片阴影效果 */
+  transition: 0.25s;
+}
+
+.flink-item-icon {
+  float: left;
+  overflow: hidden;
+  margin: 15px 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 35px;
+}
+.flink-item-name {
+  padding: 19px 10px 0 0;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.flink-item-desc {
+  padding: 13px 10px 16px 0;
+  height: 50px;
+  font-size: 0.93em;
+}
+.flink-list-item:hover {
+  background-color: #cce1c6;
+}
+.flink-list-item {
+  width: calc(50% - 15px) !important;
+}
+
+@media screen and (max-width: 1310px) {
+  .flink-list-item {
+    width: calc(100% - 15px) !important;
+  }
+}
+@media screen and (max-width: 1219px) {
+  .flink-list-item {
+    width: calc(50% - 15px) !important;
+  }
+}
+@media screen and (max-width: 1027px) {
+  .flink-list-item {
+    width: calc(100% - 15px) !important;
+  }
+}
+@media screen and (max-width: 959px) {
+  .flink-list-item {
+    width: calc(50% - 15px) !important;
+  }
+}
+@media screen and (max-width: 692px) {
+  .flink-list-item {
+    width: calc(100% - 15px) !important;
+  }
+}
+

@@ -1,0 +1,1774 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/S%26S/S%26S02/">
+      
+      
+        <link rel="prev" href="../S%26S01/">
+      
+      
+        <link rel="next" href="../S%26S03/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
+    
+    
+      
+        <title>2. LTI 的时域分析 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-lti" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. LTI 的时域分析
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Chronic%20Study/" class="md-tabs__link">
+          
+  
+    
+  
+  Chronic Study[TODO]
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            信号与系统笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. S&amp;S 基本概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. LTI 的时域分析
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. LTI 的时域分析
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      各种概念的求解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各种概念的求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      零状态响应与零输入响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲击响应与阶跃响应
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="冲击响应与阶跃响应">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ht" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲激响应 h(t) 求解方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gt" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶跃响应 g(t) 求解方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      妙妙总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lti" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散 LTI 系统的单位样值响应
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lti_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      LTI 系统的框图表示
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LTI 系统的框图表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      差分方程框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      微分方程框图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. FS/FT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. 抽样、调制与解调
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. LT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S%26S06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. ZT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Chronic%20Study/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chronic Study[TODO]
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      各种概念的求解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各种概念的求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      零状态响应与零输入响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲击响应与阶跃响应
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="冲击响应与阶跃响应">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ht" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲激响应 h(t) 求解方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gt" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶跃响应 g(t) 求解方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      妙妙总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lti" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散 LTI 系统的单位样值响应
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lti_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      LTI 系统的框图表示
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LTI 系统的框图表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      差分方程框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      微分方程框图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="2-lti">2. LTI 的时域分析<a class="headerlink" href="#2-lti" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p>&nbsp;</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1618 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<hr />
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">写在前面</p>
+<p>实际上，时域分析法因其约束和计算复杂度，在工程上并不常用，而被我们后面学习的 LT 和 ZT 变换取代<br />
+因此，本章更应注重概念与定义的理解</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">LTI 不存在？</p>
+<ul>
+<li>线性系统意味着系统满足齐次与叠加，即在现实下随着放大因子变大而无损耗、无边际，而不可能；同时叠加性意味着系统随输入数量增加而满足分配率，即无信息丢失，而不可能，故不存在绝对的线性系统<br />
+<ins>线性系统是对现实的近似简单估计</ins></li>
+<li>时不变系统意味着延迟的同步性，即随时间变化无磨损无丢失，而不可能<br />
+<ins>无法研究不可控的时间，故选择简单的时不变系统，并最大近似</ins></li>
+</ul>
+</div>
+<blockquote>
+<p>如果将输入信号用一组基本信号的线性组合来表示<br />
+那么输出信号就是将这些 <mark>基本信号的响应加权叠加</mark> 后的信号  </p>
+</blockquote>
+<h2 id="_1">一些概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">概念</th>
+<th style="text-align: left;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">响应区间</td>
+<td style="text-align: left;"><span class="arithmatex">\(0^+ &gt;&gt; \infty\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">起始状态</td>
+<td style="text-align: left;"><span class="arithmatex">\(0^-\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">初始条件</td>
+<td style="text-align: left;"><span class="arithmatex">\(0^+\)</span> 用于决定齐次解的系数</td>
+</tr>
+<tr>
+<td style="text-align: center;">齐次解<span class="arithmatex">\(y_n\)</span></td>
+<td style="text-align: left;">数学角度；方程右边为0的解</td>
+</tr>
+<tr>
+<td style="text-align: center;">特解<span class="arithmatex">\(y_p\)</span></td>
+<td style="text-align: left;">数学角度；在通解的基础上，通过给定特定的初始条件或边界条件来确定出唯一解</td>
+</tr>
+<tr>
+<td style="text-align: center;">通解</td>
+<td style="text-align: left;">数学角度；包含所有可能解的一个最一般的形式；<span class="arithmatex">\(y_n + y_p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">零输入响应<span class="arithmatex">\(y_{zi}\)</span></td>
+<td style="text-align: left;">包含所有可能解的一个最一般的形式；<span class="arithmatex">\(y_n + y_p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">零状态响应<span class="arithmatex">\(y_{zs}\)</span></td>
+<td style="text-align: left;">信号角度；仅由激励决定的方程的解；一部分通解 + 特解</td>
+</tr>
+<tr>
+<td style="text-align: center;">完全响应</td>
+<td style="text-align: left;"><span class="arithmatex">\(y_{zi}+y_{zs}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">强迫响应<span class="arithmatex">\(y_F\)</span></td>
+<td style="text-align: left;">与输入激励同一特征根的响应</td>
+</tr>
+<tr>
+<td style="text-align: center;">自由响应<span class="arithmatex">\(y_f\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(完全响应 -y_F\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">稳态响应<span class="arithmatex">\(y_{ss}\)</span></td>
+<td style="text-align: left;">趋于无穷时保留的分量</td>
+</tr>
+<tr>
+<td style="text-align: center;">冲激响应<span class="arithmatex">\(h(t)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\delta(t)\)</span>经过系统的作用而产生的响应</td>
+</tr>
+<tr>
+<td style="text-align: center;">阶跃响应<span class="arithmatex">\(g(t)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(u(t)\)</span>经过系统的作用而产生的响应</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">各种概念的求解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<details class="tip">
+<summary>基于 <ins>待定系数法</ins> 求解 冲击函数 零状态 0+(初始条件)</summary>
+<p><a href="https://blog.csdn.net/HollyRan/article/details/104882403">参考文档</a><br />
+面向冲击函数作为激励时的初始条件求解。得出结果后,右边的冲激信号就可以滚蛋啦  </p>
+<p><strong>方法如下：</strong></p>
+<ol>
+<li>设 左边最高项 = 等式右边最高阶次项
+例如，对下方程</li>
+</ol>
+<div class="arithmatex">\[
+\mathrm{\frac{d^3}{dt^3}y(t)+4\frac{d^2}{dt^2}y(t)+5\frac{d}{dt}y(t)+2y(t)=\delta^{\prime\prime}(t)+3\delta(t)}
+\]</div>
+<p>令</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}^3}{\mathrm{d}\mathrm{t}^3}\mathrm{y}(\mathrm{t})=\mathrm{a}\delta^{\prime\prime}(\mathrm{t})+\mathrm{b}\delta^{\prime}(\mathrm{t})+\mathrm{c}\delta(\mathrm{t})+\mathrm{d}\mathrm{u}_\triangle(\mathrm{t})
+\]</div>
+<p><span class="arithmatex">\(\mathrm{u}_\triangle(\mathrm{t})\)</span>为 0-到 0+ 的一小段阶跃信号</p>
+<p>接着对 <span class="arithmatex">\(\frac{\mathrm{d}^3}{\mathrm{d}\mathrm{t}^3}\mathrm{y}(\mathrm{t})\)</span> 依次积分且不考虑 <span class="arithmatex">\(\mathrm{u}_\triangle(t)\)</span> 的积分结果,则有</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}^2}{\mathrm{d}\mathrm{t}^2}\mathrm{y}(\mathrm{t})=\mathrm{a}\delta'(\mathrm{t})+\mathrm{b}\delta(\mathrm{t})+\mathrm{c}\mathrm{u}_\triangle(\mathrm{t})
+\]</div>
+<div class="arithmatex">\[
+\frac{\mathrm{d}}{\mathrm{dt}}\mathrm{y(t)}=\mathrm{a\delta(t)}+\mathrm{bu}_\triangle(\mathrm{t})
+\]</div>
+<div class="arithmatex">\[
+\mathrm{y(t)=au_\triangle(t)}
+\]</div>
+<p>这里暂时忽略积分出来的 y''(0-) y'(0-) y(0-)</p>
+<ol start="2">
+<li>代入原方程，通过待定系数解出系数</li>
+</ol>
+<div class="arithmatex">\[
+\begin{cases}&amp;\mathrm{a}&amp;=&amp;1\\&amp;\mathrm{b+4a}&amp;=&amp;0\\&amp;\mathrm{c+4b+5a}&amp;=&amp;3\\&amp;\mathrm{d+4c+5b+2a}&amp;=&amp;0&amp;\end{cases}
+\]</div>
+<p>得</p>
+<div class="arithmatex">\[
+\begin{cases}&amp;\text{a}&amp;=&amp;1\\&amp;\text{b}&amp;=&amp;-4\\&amp;\text{c}&amp;=&amp;14\\&amp;\text{d}&amp;=&amp;-38\end{cases}
+\]</div>
+<ol start="3">
+<li>最后得到结果，就是 0- + 系数</li>
+</ol>
+<div class="arithmatex">\[
+\begin{gathered}
+\mathrm{y(0+)=y(0-)+\int_{0-}^{0+}a\delta(t)\:dt} \\
+\mathrm{y^{\prime}(0+)=y^{\prime}(0-)+\int_{0-}^{0+}b\delta(t)\:dt} \\
+\mathrm{y^{\prime\prime}(0+)=y^{\prime\prime}(0-)+\int_{0-}^{0+}c\delta(t)\:dt} 
+\end{gathered}
+\]</div>
+</details>
+<h3 id="_3">零状态响应与零输入响应<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<details class="example">
+<summary>通过两道例题来理解</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png" /></a></p>
+<hr />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png" /></a></p>
+</details>
+<p>`---</p>
+<h3 id="_4">冲击响应与阶跃响应<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>积分与微分的关系</strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png" /></a></p>
+<hr />
+<h4 id="ht">冲激响应 h(t) 求解方法<a class="headerlink" href="#ht" title="Permanent link">&para;</a></h4>
+<details class="冲激函数匹配法">
+<summary>冲激函数匹配法</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png" /></a></p>
+</details>
+<details class="example">
+<summary>例题</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png" /></a></p>
+<hr />
+<p>看两边阶数<br />
+左边阶数若 &lt;= 右边，则必然出现冲激信号<br />
+利用<span class="arithmatex">\(\delta(t)=\frac{du(t)}{dt}\quad\delta^{^{\prime}}(t)=\frac{d\delta(t)}{dt}\)</span>解决</p>
+<p><mark>也可以用拉氏变换求零状态响应解决</mark></p>
+</details>
+<hr />
+<h4 id="gt">阶跃响应 g(t) 求解方法<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h4>
+<details class="example">
+<summary>例题</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png" /></a></p>
+<hr />
+<p>方法同冲激信号求解方法，但因为右边有值，多了一个**特解**<br />
+同理，可用拉式变换求解</p>
+</details>
+<hr />
+<h3 id="_5">妙妙总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>记得最后加上 u(t)!!u(t)!!u(t)!!<br />
+冲激信号卷积所求为零状态响应<br />
+起始状态和初始条件求零输入  </p>
+</blockquote>
+<details class="abstract">
+<summary>各种响应的总结</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png" /></a></p>
+</details>
+<details class="example" open="open">
+<summary>妙妙例题</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg" /></a></p>
+<hr />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg" /></a>  </p>
+<hr />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png" /></a></p>
+</details>
+<hr />
+<h3 id="lti">离散 LTI 系统的单位样值响应<a class="headerlink" href="#lti" title="Permanent link">&para;</a></h3>
+<details class="example">
+<summary>例题</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png" /></a></p>
+<p>离散下的 h[t]只考虑齐次解（求零输入响应）  </p>
+<p>高次下 用 Z 变换比较困难，建议老老实实算  </p>
+<hr />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png" /></a></p>
+<p><mark>叠加性 齐次性</mark><br />
+利用 LTI 特性计算，先看成 x[n]</p>
+</details>
+<hr />
+<h2 id="_6">卷积<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>卷积，一种类似于加减乘除的定义的计算方法，是一种叠加相乘再求和的过程,也是拉氏变换域下的乘积</p>
+<p>理解卷积：<a href="http://www.bilibili.com/video/BV1Di4y1o7vX">火车进隧道</a></p>
+</blockquote>
+<div class="arithmatex">\[
+卷积和公式：x[n]*h[n]=\sum_{k=-\infty}^{\infty}x[k]h[n-k]
+\]</div>
+<div class="arithmatex">\[
+卷积积分：y(t)=\int_{-\infty}^{+\infty}x(\tau)h(t-\tau)\mathrm{d}\tau  = x(t) * h(t)
+\]</div>
+<p><ins>卷积积分计算：</ins></p>
+<ol>
+<li>用几何直观计算，t在y轴处，画图（方波、三角波幅值为1则可用面积分段计算）  </li>
+<li>确定左右区间（左+左，右+右），带公式，利用微积分性质和冲激信号性质求解  </li>
+</ol>
+<p><ins>卷积和计算：</ins></p>
+<ol>
+<li>写公式 + 列表法</li>
+</ol>
+<p><ins>卷积积分性质：</ins></p>
+<ol>
+<li>满足交换律、分配律、结合律  </li>
+<li>$x\left(t\right)*u\left(t\right)=\int_{0}^{t}x\left(\tau\right)d\tau $  </li>
+<li>$x\left[n\right]*u\left[n\right]=\sum_{0}^{n}x\left[k\right] $  </li>
+<li>微分性质：<span class="arithmatex">\(\begin{aligned} \frac{d}{dt}[x(t)^*h(t)]&amp; =\frac{dx(t)}{dt}*h(t)  =x(t)^*\frac{dh(t)}{dt}\end{aligned}\)</span>，积分同理</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">小技巧</p>
+<p>微积分性质可用于计算，使卷积两边一个积分一个微分： 
+<span class="arithmatex">\(y(t)=x(t)*h(t)=\frac{\mathrm{d}x(t)}{\mathrm{d}t}*\int_{-\infty}^th(\lambda)\mathrm{d}\lambda=\left[\int_{-\infty}^tx(\lambda)\mathrm{d}\lambda\right]*\frac{\mathrm{d}h(t)}{\mathrm{d}t}\)</span></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png" /></a></p>
+</div>
+<ol start="5">
+<li><span class="arithmatex">\(\text{冲激偶函数}\delta^{\prime}\left(t\right)=\frac{d\delta\left(t\right)}{dt}\quad0^-为+\infty,0^+为-\infty. \quad \int_{-\infty}^{+\infty}x\left(t\right)\delta^{\prime}\left(t\right)dt=-x^{\prime}\left(0\right)\)</span>  </li>
+<li><span class="arithmatex">\(左右分别平移t_0对卷积计算没有影响，即\quad x(t+t_{0})*h(t-t_{0})=x(t)*h(t)\)</span></li>
+</ol>
+<p><ins>卷积和性质：</ins></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png" /></a></p>
+<hr />
+<h2 id="lti_1">LTI 系统的框图表示<a class="headerlink" href="#lti_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>倍乘、加法、积分（连续的）、延时（离散的）
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png" /></a><br />
+<strong>注意要把微分转化为积分</strong></p>
+</blockquote>
+<h3 id="_7">差分方程框图<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{y}[n]+a_1\text{y}[n-1]+a_0\text{y}[n-2]=b_2x[n]+b_1x[n-1]+b_0x[n-2]
+\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png" /></a></p>
+<blockquote>
+<dl>
+<dt>直接 I 和直接 II 型</dt>
+<dd>注意箭头方向，← 为输入，→ 为输出</dd>
+</dl>
+</blockquote>
+<h3 id="_8">微分方程框图<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>移项，转化为积分</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png" /></a>  </p>
+<blockquote>
+<p>I 型左侧为 x，II 型右侧为 x</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../S%26S01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1. S&amp;amp;S 基本概念">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                1. S&amp;S 基本概念
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../S%26S03/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3. FS/FT">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                3. FS/FT
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/print-site.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
